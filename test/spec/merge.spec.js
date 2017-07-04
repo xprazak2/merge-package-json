@@ -22,6 +22,14 @@ describe('#merge', function() {
 		}).to.not.throw();
 	});
 
+	it('should using existing strings for variables where possible',function()  {
+		var result = JSON.parse(merge(
+			fixture('complete'),
+			fixture('dependencies')
+		));
+		expect(result.version).to.equal('10.3.1');
+	});
+
 	it('should merge dependencies correctly', function() {
 		var result = JSON.parse(merge(
 			fixture('complete'),
