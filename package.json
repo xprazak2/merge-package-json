@@ -1,8 +1,11 @@
 {
-	"name": "package-merge",
-	"version": "0.1.2",
+	"name": "package-json-merge",
+	"version": "0.1.3",
 	"description": "Intelligently merge `package.json` files.",
-	"author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
+	"author": [
+		"Izaak Schroeder <izaak.schroeder@gmail.com>",
+		"Enrico Aleandri <aleandrienrico@gmail.com>"
+	],
 	"main": "lib/merge.js",
 	"scripts": {
 		"test": "./node_modules/.bin/_mocha -R spec test/spec"

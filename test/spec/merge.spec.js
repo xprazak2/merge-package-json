@@ -9,6 +9,11 @@ function fixture(name) {
 		__dirname, '..', 'fixtures', name+'.fixture.json'
 	), 'utf8');
 }
+function fixtureRequired(name) {
+	return require(path.join(
+		__dirname, '..', 'fixtures', name+'.fixture.json'
+	), 'utf8');
+}
 
 describe('#merge', function() {
 
@@ -39,12 +44,24 @@ describe('#merge', function() {
 		expect(result.dependencies).to.have.property('express', '^5.0.0');
 	});
 
+	it('should merge multiple dependencies correctly', function() {
+		var result = merge(
+			fixture('complete'),
+			fixture('dependencies')
+		);
+		var result2 = JSON.parse(merge(
+			result,
+			fixture('dependencies2')
+		));
+		expect(result2.dependencies).to.have.property('text-to-mp3', '^1.1.2');
+	});
+
+
 	it('should work on emptiness', function() {
 		var result = JSON.parse(merge(
 			fixture('complete'),
 			fixture('dependencies')
 		));
-
 		expect(result.dependencies).to.have.property('express', '^5.0.0');
 	});
 });

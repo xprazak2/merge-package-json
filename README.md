@@ -1,11 +1,11 @@
-# package-merge
+# package-json-merge
 
 Intelligently merge `package.json` files.
 
 This is pretty much built for yeoman. It attempts to combine two separate `package.json` files into one, respecting as much existing content as possible including already existing dependencies and `package.json` formatting.
 
 ```javascript
-var merge = require('package-merge');
+var merge = require('package-json-merge');
 var dst = fs.readFileSync('package.a.json');
 var src = fs.readFileSync('package.b.json');
 
@@ -13,6 +13,28 @@ var src = fs.readFileSync('package.b.json');
 console.log(merge(dst, src));
 ```
 
+
+```javascript
+var merge = require('package-json-merge');
+var dst = require('package.a.json');
+var src = require('package.b.json');
+
+// Create a new `package.json`
+console.log(merge(dst, src));
+```
+
+
+
+```javascript
+var merge = require('package-json-merge');
+var src = require('package.b.json');
+var dst = require('package.a.json');
+var dst2 = require('package.b.json');
+
+// Create a new `package.json`
+console.log(merge(dst, src));
+console.log(merge(dst2, dst));
+```
 It allows you to do things like define scripts or dependencies that you would like to include as part of a larger project.
 
 Merging:
