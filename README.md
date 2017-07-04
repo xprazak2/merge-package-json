@@ -1,11 +1,11 @@
-# package-json-merge
+# merge-package-json
 
 Intelligently merge `package.json` files.
 This is pretty much built for yeoman. It attempts to combine two separate `package.json` files into one, respecting as much existing content as possible including already existing dependencies and `package.json` formatting.
 
-[![NPM](https://nodei.co/npm/package-json-merge.png)](https://nodei.co/npm/package-json-merge/)
+[![NPM](https://nodei.co/npm/merge-package-json.png)](https://nodei.co/npm/merge-package-json/)
 
-[![npm version](https://badge.fury.io/js/package-json-merge.svg)](https://badge.fury.io/js/package-json-merge)
+[![npm version](https://badge.fury.io/js/merge-package-json.svg)](https://badge.fury.io/js/merge-package-json)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
 ## Installation
@@ -13,12 +13,12 @@ This is pretty much built for yeoman. It attempts to combine two separate `packa
 Install this module through npm or clone it:
 
 ```javascript
-npm install --save package-json-merge
+npm install --save merge-package-json
 ```
 ## Usage
 
 ```javascript
-var merge = require('package-json-merge');
+var merge = require('merge-package-json');
 var dst = fs.readFileSync('package.a.json');
 var src = fs.readFileSync('package.b.json');
 
@@ -28,7 +28,7 @@ console.log(merge(dst, src));
 
 
 ```javascript
-var merge = require('package-json-merge');
+var merge = require('merge-package-json');
 var dst = require('package.a.json');
 var src = require('package.b.json');
 
@@ -39,7 +39,7 @@ console.log(merge(dst, src));
 
 
 ```javascript
-var merge = require('package-json-merge');
+var merge = require('merge-package-json');
 var src = require('package.b.json');
 var dst = require('package.a.json');
 var dst2 = require('package.b.json');
@@ -116,7 +116,7 @@ results in:
  
 ## Credits
  
-Main Author - Izaak Schroeder (@izaakschroeder)
+Author - Izaak Schroeder (@izaakschroeder)
 Lead Developer - Enrico Aleandri (@enricoaleandri)
  
 ## License
